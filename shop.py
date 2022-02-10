@@ -12,7 +12,7 @@ class tokped:
         self.url = f'https://www.tokopedia.com/{self.toko}/etalase/all?q={self.tipe}/'.replace(" ", "%20")
 
     def main_function(self):
-        _request = requests.get(self.url, headers=self.headers).text
+        _request = requests.get(self.url, headers=__class__.headers).text
         soup = bs(_request, "lxml")
         product_name = soup.find('div', class_="css-1b6t4dn").text
         price = soup.find('div', class_='css-1ksb19c').text
